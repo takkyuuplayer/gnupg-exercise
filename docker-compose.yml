@@ -1,0 +1,11 @@
+version: "2.1"
+
+services:
+  gnupg-exercise:
+    container_name: gnupg-exercise
+    image: gnupg-exercise
+    build: .
+    tty: true
+    volumes:
+      - ./:/srv/
+    working_dir: /srv

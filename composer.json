@@ -1,0 +1,15 @@
+{
+    "name": "takkyuuplayer/gnupg-exercise",
+    "authors": [
+        {
+            "name": "takkyuuplayer",
+            "email": "takkyuuplayer@gmail.com"
+        }
+    ],
+    "require": {
+        "pear/crypt_gpg": "^1.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    }
+}
