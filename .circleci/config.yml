@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "composer.json" }}
+            - v1-dependencies-
+
+      - run: docker-compose up -d
+      - run: docker exec circleci -it gnupg-exercise_gnupg-exercise_1 make
+
+      - save_cache:
+          key: v1-dependencies-{{ checksum "composer.json" }}
+          paths:
+            - ./vendor
+
+      - run: docker exec circleci -it gnupg-exercise_gnupg-exercise_1 make test
