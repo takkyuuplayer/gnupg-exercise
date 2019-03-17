@@ -10,11 +10,11 @@ jobs:
             - v1-dependencies-
 
       - run: docker-compose up -d
-      - run: docker exec -it gnupg-exercise_gnupg-exercise_1 make
+      - run: docker exec -it gnupg-exercise make
 
       - save_cache:
           key: v1-dependencies-{{ checksum "composer.json" }}
           paths:
             - ./vendor
 
-      - run: docker exec -it gnupg-exercise_gnupg-exercise_1 make test
+      - run: docker exec -it gnupg-exercise make test
