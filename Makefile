@@ -12,7 +12,7 @@ composer.phar:
 	php -r "readfile('https://getcomposer.org/installer');" | php
 
 test:
-	./vendor/bin/phpunit
+	./vendor/bin/phpunit tests
 
 help:
 	cat Makefile
