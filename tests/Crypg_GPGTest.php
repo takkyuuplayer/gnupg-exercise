@@ -16,7 +16,7 @@ class Crypt_GPGTest extends TestCase
     }
     public function testDecryptV1()
     {
-        $this->gpg->addDecryptKey('gpg1@example.com', 'password');
+        $this->gpg->addDecryptKey('4085C7CB375C113A75EAFBFD7BBC032B13B2334A', 'password');
         $expected = file_get_contents(__DIR__ . '/' . '../gpg1/version');
         $encrypted = file_get_contents(__DIR__ . '/' . '../gpg1/version.gpg');
 
@@ -27,7 +27,7 @@ class Crypt_GPGTest extends TestCase
 
     public function testDecryptV2()
     {
-        $this->gpg->addDecryptKey('gpg2@example.com', 'password');
+        $this->gpg->addDecryptKey('2716CABEE759084DAB3904F29D64786A22987C48', 'password');
         $expected = file_get_contents(__DIR__ . '/' . '../gpg2/version');
         $encrypted = file_get_contents(__DIR__ . '/' . '../gpg2/version.gpg');
 
